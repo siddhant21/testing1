@@ -4,7 +4,8 @@ const mongoose=require('mongoose');
 const user=require('./models/userSchema');
 const encrypt =require('mongoose-encryption');
 
-
+//creating a port for heroku and local machine
+var PORT = process.env.PORT || 3000;
 
 const app=express();
 
@@ -74,6 +75,6 @@ app.post('/login',(req,res)=>{
         }
     });
 });
-app.listen(3000,()=>{
+app.listen(PORT,()=>{
     console.log("server started");
 });
